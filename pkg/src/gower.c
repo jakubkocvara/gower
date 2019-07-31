@@ -19,21 +19,10 @@
  */
 
 
-
+#undef _OPENMP
 #ifdef _OPENMP
 #include <omp.h>
 #endif
-
-/* R-windows-oldrel (3.2.x) uses gcc 4.6.3  which we need to detect */
-#ifdef __GNUC__
-#if __GNUC__ <= 4 && __GNUC_MINOR__ <= 6
-#else
-#define HAS_REDUCTION
-#endif
-#endif
-
-
-
 
 #include <math.h>
 #include <R.h>
